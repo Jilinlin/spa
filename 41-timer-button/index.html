@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timer button的测试页面</title>
+    <link rel="stylesheet" href="./timer-button.css">
+</head>
+<body>
+    <!-- 测试按钮 -->
+    <input id="add" type="button" value="添加定时器按钮"/>
+    <hr>
+    <div id="main">
+        <!-- dom结构分两种 设计时如下（dom结构固定）、运行时（js代码生成） -->
+        <!-- <input type="button" value="同意（9s）" disabled> -->
+    </div>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./timer-button.js"></script>
+    <script>
+        // 永久组件
+        // $(function(){
+        //     $timerButton.show('#main');
+        // })
+
+        // 临时组件
+        $(function(){
+            var tb1 = new TimerButton();
+                tb1.show({
+                    num:9,
+                    title:'发送验证码',
+                    onClick:function(){//定时器响应后的回掉函数
+                        alert('点击了定时器按钮');
+                    }
+                });
+            var $btnAdd = $('#add');
+
+            $btnAdd.click(function(){
+                var tb = new TimerButton();
+                tb.show({
+                    num:6,
+                    title:'同意',
+                    onClick:function(){//定时器响应后的回掉函数
+                        alert('点击了定时器按钮');
+                    }
+                });
+            })
+            /*
+            $timerButton.show({//页面加载完就产生一个对象
+                    num:9,
+                    title:'发送验证码',
+                    onClick:function(){//定时器响应后的回掉函数
+                        alert('短信已发送！');
+                    }
+            });
+            var $btnAdd = $('#add');
+
+            // $btnAdd.click(function(){
+            //     $timerButton.show('#main');
+            //     // console.log('add timer button')
+            // })
+
+            // $btnAdd.click(function(){
+            //     $timerButton.show();
+            // })
+
+            // $btnAdd.click(function(){
+            //     $timerButton.show({
+            //         num:6,
+            //         title:'发送验证码',
+            //         onClick:function(){//定时器响应后的回掉函数
+            //             console.log('点击了定时器按钮');
+            //         }
+            //     });
+            // })
+
+            $btnAdd.click(function(){
+                $timerButton.show({
+                    num:6,
+                    title:'同意',
+                    onClick:function(){//定时器响应后的回掉函数
+                        alert('点击了定时器按钮');
+                    }
+                });
+            })
+            */
+
+        });
+    </script>
+</body>
+</html>

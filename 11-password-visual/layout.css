@@ -1,0 +1,42 @@
+body {
+    font-family: 微软雅黑;
+    line-height: 2em;
+    margin: 0;
+    font-size: 1.2em
+  }
+  .main {
+    width: 360px;
+    margin: 20px auto 0;
+    padding: 20px 20px;
+    position: relative;
+  }
+  input {
+    font-size: 1.2em;
+  }
+  #pwd {
+    width: 230px;
+    margin: 0;
+  }
+  .pwdtext {
+    width: 185px;
+    height: 27px;
+    z-index: -10;
+    border: none;
+    position: relative;
+    left: 60px;
+    top: -66px;
+  }
+  #eye {
+    width: 34px;
+    height: 28px;
+    background-size: contain;
+    position: relative;
+    top: -33px;
+    left: 250px;
+    z-index: 9;
+    background-image:url('https://github.com/wangding/spa-demo/blob/master/01-html-widget/images/eye.png?raw=true');
+  }
+  #eye:hover{
+    background-image:url('https://github.com/wangding/spa-demo/blob/master/01-html-widget/images/eye-close.png?raw=true');
+  }
+  
